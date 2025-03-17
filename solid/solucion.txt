@@ -1,0 +1,62 @@
+tenemos 2 tipo de empleados
+	tiempo completo su sueldo es un monto fijo por mes
+	por hora a este empleado se la paga por hora
+realizar un programa q calcule el total de planilla de la empresa
+
+
+// Interfaz para empleados
+interface Employee {
+    double calculateSalary();
+}
+
+// Clase concreta para empleados fijos
+class FullTimeEmployee implements Employee {
+    private double monthlySalary;
+
+    public FullTimeEmployee(double monthlySalary) {
+        this.monthlySalary = monthlySalary;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return monthlySalary;
+    }
+}
+
+// Clase concreta para empleados por hora
+class PartTimeEmployee implements Employee {
+    private double hourlyRate;
+    private int hoursWorked;
+
+    public PartTimeEmployee(double hourlyRate, int hoursWorked) {
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return hourlyRate * hoursWorked;
+    }
+}
+
+// Clase para calcular la nómina (Single Responsibility Principle)
+class PayrollCalculator {
+    public static double calculateTotalSalary(Employee[] employees) {
+        double total = 0;
+        for (Employee employee : employees) {
+            total += employee.calculateSalary();
+        }
+        return total;
+    }
+}
+
+// Ejemplo de uso
+public class Main {
+    public static void main(String[] args) {
+        Employee emp1 = new FullTimeEmployee(3000);
+        Employee emp2 = new PartTimeEmployee(20, 80);
+
+        Employee[] employees = {emp1, emp2};
+        System.out.println("Total Salarios: $" + PayrollCalculator.calculateTotalSalary(employees));
+    }
+}
