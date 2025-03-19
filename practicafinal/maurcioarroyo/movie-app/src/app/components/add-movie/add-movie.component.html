@@ -1,0 +1,42 @@
+<form class="movie-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Author</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Language</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+
+  <mat-form-field>
+      <mat-label>Release date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Editorial Email</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Editorial Phone Number</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <section class="submit-section">
+    <div class="example-button-row">
+      <button mat-button>Submit</button>
+    </div>
+  </section>
+</form> 
