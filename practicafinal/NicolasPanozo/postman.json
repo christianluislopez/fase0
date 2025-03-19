@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "My Project API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Records",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add New Record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sample Title\",\n  \"author\": \"Sample Author\",\n  \"language\": \"English\",\n  \"publication_date\": \"2023-10-01\",\n  \"editorial_email\": \"editorial@example.com\",\n  \"editorial_cellphone\": \"1234567890\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -14,7 +14,7 @@ const pool = new Pool({
   user: 'proyecto',
   host: 'localhost',
   database: 'proyecto0',
-  password: 'your_password', // replace with your actual password
+  password: 'proyecto',
   port: 5432,
 });
 
